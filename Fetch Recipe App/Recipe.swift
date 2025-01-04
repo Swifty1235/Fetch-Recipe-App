@@ -13,11 +13,17 @@ struct Recipe: Identifiable, Codable {
     let name: String
     let cuisine: String
     let photoURLSmall: String?
+    let photoURLLarge: String?
+    let youtubeURL: String?
+    let sourceURL: String?
     
     enum CodingKeys: String, CodingKey {
         case id = "uuid"
         case name
         case cuisine
         case photoURLSmall = "photo_url_small"
+        case photoURLLarge = "photo_url_large"  // Maps JSON key
+        case youtubeURL = "youtube_url"        // Maps JSON key
+        case sourceURL = "source_url"
     }
 }
