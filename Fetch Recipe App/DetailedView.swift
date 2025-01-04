@@ -26,10 +26,10 @@ struct DetailedView: View {
                     .font(.headline)
                     .fontWeight(.bold)
                 
-                Text(recipe.cuisine)
-                    .font(.subheadline)
+                Text("Cusine Type: \(recipe.cuisine)")
                     .foregroundStyle(.red)
-                
+                    .italic(true)
+                    
                 if let sourceURL = recipe.sourceURL {
                     Link("View Recipe", destination: URL (string: sourceURL)!)
                         .font(.headline)
@@ -47,3 +47,6 @@ struct DetailedView: View {
     }
 }
 
+#Preview {
+    ContentView()
+}
