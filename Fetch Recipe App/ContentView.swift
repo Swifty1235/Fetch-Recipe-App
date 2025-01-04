@@ -8,14 +8,34 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var viewModel = recipeView()
+    
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView{
+            VStack {
+                if let errorMessage = viewModel.errorMessage {
+                    Text(errorMessage)
+                        .foregroundStyle(.red)
+                        .padding()
+                }else{
+                    List(viewModel.recipes) { recipe in
+                        VStack (alignment: .leading) {
+                            Text (recipe.name)
+                                .font(.headline)
+                            Text (recipe.cuisine)
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                }
+            }
+            .navigationTitle("Recipes")
+            .task {
+                await viewModel.getReceipes()
+            }
         }
-        .padding()
+        
     }
 }
 
