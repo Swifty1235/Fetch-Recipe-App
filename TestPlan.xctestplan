@@ -1,0 +1,18 @@
+{
+  "configurations" : [
+    {
+      "id" : "A340B089-8377-43EE-983F-81B2756D775D",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+
+  ],
+  "version" : 1
+}
