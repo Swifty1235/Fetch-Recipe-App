@@ -3,7 +3,9 @@
 
 ![smaller_image_1](https://github.com/user-attachments/assets/c79636de-f1ea-46b9-abfd-738f38e9a6f9)
 
+![smaller_image_2](https://github.com/user-attachments/assets/3c25fc05-7a2b-495e-9d18-0b6cbbcc2758)
 
+![smaller_image_3](https://github.com/user-attachments/assets/824202a0-7925-4284-98f5-f3fffde0bc89)
 
 ### Focus Areas: What specific areas of the project did you prioritize? Why did you choose to focus on these areas?
 For this project, I prioritized creating a user-friendly UI. I believe that even if the functionality is flawless, a complex or unresponsive UI can ruin the user experience. My focus was on designing an intuitive and visually appealing interface that enhances the user’s interaction with the app.
