@@ -12,7 +12,7 @@ class recipeView: ObservableObject {
     @Published var recipes: [Recipe] = []
     @Published var errorMessage: String?
     
-    private let url = URL(string: "https://d3jbb8n5wk0qxi.cloudfront.net/recipes.json")!
+    var url = URL(string: "https://d3jbb8n5wk0qxi.cloudfront.net/recipes.json")!
     
     func getReceipes()async {
         do{
