@@ -1,5 +1,6 @@
 ### Summary: Include screen shots or a video of your app highlighting its features
 
+![Screenshot 2025-01-05 at 4 15 03 PM](https://github.com/user-attachments/assets/6680a2ee-cd98-4458-8f40-7d5586464fcd)
 
 
 ### Focus Areas: What specific areas of the project did you prioritize? Why did you choose to focus on these areas?
