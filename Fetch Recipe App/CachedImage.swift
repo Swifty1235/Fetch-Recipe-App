@@ -10,9 +10,9 @@ import SwiftUI
 struct CachedAsyncImage: View {
     let url: String
     let placeholder: Image
-
+    
     @State private var image: UIImage?
-
+    
     var body: some View {
         ZStack {
             if let uiImage = image {
@@ -29,17 +29,17 @@ struct CachedAsyncImage: View {
             }
         }
     }
-
+    
     private func loadImage() {
         // Is imaged Cached
         if let cachedImage = ImageCacheManager.shared.getImage(forKey: url) {
             image = cachedImage
             return
         }
-
+        
         // Downloads image if not cached
         guard let url = URL(string: url) else { return }
-
+        
         Task {
             do {
                 let (data, _) = try await URLSession.shared.data(from: url)

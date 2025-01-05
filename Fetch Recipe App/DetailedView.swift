@@ -12,40 +12,87 @@ struct DetailedView: View {
     
     var body: some View {
         ScrollView {
-            VStack {
+            ZStack{
                 AsyncImage(url: URL(string: recipe.photoURLLarge ?? "")) {
                     image in image
                         .resizable()
-                        .scaledToFit()
-                        .frame(maxWidth: .infinity)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .blur(radius: 40)
+                        .opacity(0.5)
                 } placeholder: {
                     Color.gray
-                        .frame(maxWidth: 200)
                 }
-                Text(recipe.name)
-                    .font(.headline)
-                    .fontWeight(.bold)
+                .frame(height: UIScreen.main.bounds.height * 2 / 3)
+                .edgesIgnoringSafeArea(.all)
                 
-                Text("Cusine Type: \(recipe.cuisine)")
-                    .foregroundStyle(.red)
-                    .italic(true)
+                VStack {
+                    AsyncImage(url: URL(string: recipe.photoURLLarge ?? "")) {
+                        image in image
+                            .resizable()
+                            .scaledToFit()
+                        
+                    } placeholder: {
+                        Color.gray
+                            .frame(maxWidth: 200)
+                    }
+                    .padding(.bottom, 50)
                     
-                if let sourceURL = recipe.sourceURL {
-                    Link("View Recipe", destination: URL (string: sourceURL)!)
-                        .font(.headline)
-                        .foregroundStyle(.red)
+                    Text("Cuisine Type: \(recipe.cuisine)")
+                        .font(.title)
+                        .italic()
+                        .foregroundColor(.primary)
+                        .padding(.horizontal)
+                    
+                    if let sourceURL = recipe.sourceURL {
+                        Button(action: {
+                            if let url = URL(string: sourceURL) {
+                                UIApplication.shared.open(url)
+                            }
+                        }) {
+                            HStack {
+                                Image(systemName: "book")
+                                Text("View Recipe")
+                            }
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color.blue)
+                            .cornerRadius(10)
+                        }
+                        .padding(.horizontal)
+                    }
+                    
+                    if let youtubeURL = recipe.youtubeURL {
+                        Button(action: {
+                            if let url = URL(string: youtubeURL) {
+                                UIApplication.shared.open(url)
+                            }
+                        }) {
+                            HStack {
+                                Image(systemName: "play.rectangle")
+                                Text("Watch Video")
+                            }
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color.red)
+                            .cornerRadius(10)
+                        }
+                        .padding(.horizontal)
+                    }
+                    
+                    Spacer()
                 }
-                
-                if let youtubeURL = recipe.youtubeURL {
-                    Link("Watch Video", destination: URL (string: youtubeURL)!)
-                        .font(.headline)
-                }
+                .padding()
             }
-            .padding()
         }
         .navigationTitle(recipe.name)
+        .navigationBarTitleDisplayMode(.inline) // Compact navigation title
     }
 }
+
 
 #Preview {
     ContentView()

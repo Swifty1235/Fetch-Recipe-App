@@ -22,8 +22,8 @@ struct Recipe: Identifiable, Codable {
         case name
         case cuisine
         case photoURLSmall = "photo_url_small"
-        case photoURLLarge = "photo_url_large"  // Maps JSON key
-        case youtubeURL = "youtube_url"        // Maps JSON key
+        case photoURLLarge = "photo_url_large"  
+        case youtubeURL = "youtube_url"
         case sourceURL = "source_url"
     }
 }
