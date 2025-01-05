@@ -1,6 +1,10 @@
 ### Summary: Include screen shots or a video of your app highlighting its features
 
-![Screenshot 2025-01-05 at 4 15 03 PM](https://github.com/user-attachments/assets/6680a2ee-cd98-4458-8f40-7d5586464fcd)
+![simulator_screenshot_5786AD3F-174F-4F49-936C-54320010C8A1](https://github.com/user-attachments/assets/fe810fb7-7146-492c-a8e4-33ccff2c1409)
+
+![simulator_screenshot_A9864355-1B4A-4B4A-9526-D59C34DD0197](https://github.com/user-attachments/assets/51d33b3c-40d1-4740-b6b3-a339133b88f1)
+
+![simulator_screenshot_9CB32181-DF46-482E-A689-98F14C7D3E2D](https://github.com/user-attachments/assets/5c88d779-593e-4964-974a-c4fcda39ec35)
 
 
 ### Focus Areas: What specific areas of the project did you prioritize? Why did you choose to focus on these areas?
